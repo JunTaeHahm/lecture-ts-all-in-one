@@ -13,6 +13,7 @@ add22('1', 2); // '12'
 
 
 /* 위와 같은 문제 때문에 나온 것이 제네릭 */
+// 제네릭 분석은 한 칸씩 직접 타입을 찾아서 넣어보면 나온다.
 // 매개변수의 타입을 정해줄 수 있다.
 // 현재 타입이 뭔지 모르겠는데 나중에 타입을 정하겠다.(변수처럼 사용 가능)
 // 주로 T를 사용한다.
@@ -42,6 +43,13 @@ function c22<T extends number, K extends :string>:(x: T, y: K): T {
 function d22<T extends string>(x: T, y: T): T { return x }
 function e22<T extends (a:string)=>number>(x:T): T { return x} // 콜백함수에 주로 사용
 
+
+/* 제네릭 선언 위치 */
+// function a<T>() {}
+// class B<T>() {}
+// interface C<T> {}
+// type D<T> = {};
+// const e = <T>() => {};
 
 // <T extends {...}> // 특정 객체
 // <T extends any[]> // 모든 배열
